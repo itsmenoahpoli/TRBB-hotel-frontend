@@ -1,1 +1,1 @@
-import { firebaseConfig } from "./firebase.config";
+export { getEnv } from "./env.config";

@@ -4,6 +4,7 @@ import pluginPersistedState from "pinia-plugin-persistedstate";
 import VueFeather from "vue-feather";
 import RootApp from "~/App.vue";
 import "~/styles/global.css";
+import "../node_modules/flowbite-vue/dist/index.css";
 
 import router from "~/router";
 
