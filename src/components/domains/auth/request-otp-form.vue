@@ -13,23 +13,21 @@ const fields = {
       required: true,
     },
   }),
-  password: useField("password", {
-    rule: {
-      required: true,
-    },
-  }),
 };
 
 const onFormSubmit = handleSubmit(async (formData: any) => {
-  return authService.authenticateCredentials(formData as Credentials);
+  return authService.requestOTP(formData as Credentials["email"]);
 });
 </script>
 
 <template>
   <form class="form" @submit.prevent.once="onFormSubmit">
+    <RouterLink :to="{ name: 'auth-login' }" class="text-sm text-blue-700 underline underline-offset-4">Back to login</RouterLink>
     <div>
-      <h1 class="text-2xl font-bold">Log In</h1>
-      <p class="text-sm text-gray-600">To access admin dashboard</p>
+      <h1 class="text-2xl font-bold">Request OTP (one-time-passcode)</h1>
+      <p class="text-sm text-gray-600 mt-3">
+        Please enter your account's email address. An email with a link to reset your password will be sent to your account's email address.
+      </p>
     </div>
 
     <div class="form-group">
@@ -47,22 +45,7 @@ const onFormSubmit = handleSubmit(async (formData: any) => {
       <small v-if="fields.email.error" class="form-error-label">Field is required</small>
     </div>
 
-    <div class="form-group">
-      <FwbInput
-        v-model="fields.password.value"
-        :ref="fields.password.ref"
-        placeholder="Enter password"
-        :class="[
-          {
-            'error-border': fields.password.error,
-          },
-        ]"
-      />
-      <small v-if="fields.password.error" class="form-error-label">Field is required</small>
-    </div>
-
-    <RouterLink to="/auth/request-otp" class="text-xs text-right text-blue-700 underline underline-offset-4">Forgot password?</RouterLink>
-    <FwbButton color="dark" class="py-3">Log In</FwbButton>
+    <FwbButton color="dark" class="py-3">Send & Verify</FwbButton>
   </form>
 </template>
 

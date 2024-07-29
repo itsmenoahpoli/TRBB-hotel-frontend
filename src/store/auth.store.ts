@@ -19,5 +19,9 @@ export const useAuthStore = defineStore("auth-store", {
     SET_TOKEN(token: AuthState["token"]) {
       this.token = token;
     },
+    CLEAR_AUTH() {
+      this.$reset();
+    },
   },
+  persist: true,
 });

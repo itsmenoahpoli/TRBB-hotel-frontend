@@ -16,6 +16,11 @@ const router = createRouter({
           name: "auth-login",
           component: () => import("~/views/auth/login.vue"),
         },
+        {
+          path: "/auth/request-otp",
+          name: "auth-request-otp",
+          component: () => import("~/views/auth/request-otp.vue"),
+        },
       ],
     },
   ],

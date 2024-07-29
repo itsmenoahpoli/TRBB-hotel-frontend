@@ -4,7 +4,6 @@ import type { Credentials } from "~/types/auth";
 
 export class AuthService extends BaseService {
   public async authenticateCredentials(credentials: Credentials) {
-    console.log(credentials);
     try {
       const response = await this.http.post("/auth/login", credentials);
       const { SET_USER, SET_TOKEN } = useAuthStore();
@@ -13,9 +12,13 @@ export class AuthService extends BaseService {
       SET_USER(user);
       SET_TOKEN(token);
 
-      console.log(response);
+      console.log(response.data);
     } catch (error) {
       this.handleError(error);
     }
+  }
+
+  public async requestOTP(email: string) {
+    console.log(email);
   }
 }
