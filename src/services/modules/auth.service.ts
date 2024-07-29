@@ -1,5 +1,6 @@
 import { BaseService } from "./../base.service";
 import { useAuthStore } from "~/store";
+import { HttpStatus } from "~/types/http";
 import type { Credentials } from "~/types/auth";
 
 export class AuthService extends BaseService {
@@ -12,13 +13,21 @@ export class AuthService extends BaseService {
       SET_USER(user);
       SET_TOKEN(token);
 
-      console.log(response.data);
+      window.location.href = "/dashboard";
     } catch (error) {
       this.handleError(error);
     }
   }
 
   public async requestOTP(email: string) {
-    console.log(email);
+    try {
+      const response = await this.http.post("/auth/request-otp", { email });
+
+      if (response.status === HttpStatus.OK) {
+        console.log("otp requested");
+      }
+    } catch (error) {
+      this.handleError(error);
+    }
   }
 }
