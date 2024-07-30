@@ -6,10 +6,14 @@ const router = useRouter();
 </script>
 
 <template>
-  <div class="h-screen w-screen bg-slate-900 flex flex-col justify-center items-center">
-    <h1 class="text-[32px] text-white font-bold mb-4">PAGE NOT FOUND</h1>
+  <div class="h-screen w-screen bg-slate-100">
+    <div class="h-[60px] w-screen bg-black shadow"></div>
 
-    <FwbButton color="blue" @click.once="router.push({ name: 'auth-login' })">Back to home</FwbButton>
+    <div class="h-full flex flex-col items-center gap-y-4 pt-[10%]">
+      <h1 class="text-[32px] font-bold">PAGE NOT FOUND</h1>
+
+      <FwbButton color="blue" @click.once="router.push({ name: 'auth-login' })">Back to home</FwbButton>
+    </div>
   </div>
 </template>
 

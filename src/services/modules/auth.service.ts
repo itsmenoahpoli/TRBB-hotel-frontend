@@ -1,6 +1,6 @@
 import { BaseService } from "./../base.service";
 import { useAuthStore } from "~/store";
-import { HttpStatus } from "~/types/http";
+import { HTTP_STATTUS_CODE } from "~/constants";
 import type { Credentials } from "~/types/auth";
 
 export class AuthService extends BaseService {
@@ -23,7 +23,7 @@ export class AuthService extends BaseService {
     try {
       const response = await this.http.post("/auth/request-otp", { email });
 
-      if (response.status === HttpStatus.OK) {
+      if (response.status === HTTP_STATTUS_CODE.OK) {
         console.log("otp requested");
       }
     } catch (error) {
