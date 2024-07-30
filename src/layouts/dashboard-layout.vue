@@ -1,24 +1,26 @@
 <script setup lang="ts">
+import DashboardHeader from "~/components/layouts/dashboard-header.vue";
 import DashboardSidebar from "~/components/layouts/dashboard-sidebar.vue";
+import DashboardContent from "~/components/layouts/dashboard-content.vue";
 </script>
 
 <template>
-  <div class="min-h-screen w-screen relative">
-    <DashboardSidebar :width="300" />
+  <div class="min-h-screen w-screen">
+    <DashboardHeader />
 
-    <div class="h-screen w-full bg-slate-100 content">
-      <div class="h-[70px] w-full bg-white"></div>
+    <div class="h-full w-full relative">
+      <DashboardSidebar />
 
-      <div class="h-full w-full"></div>
+      <DashboardContent>
+        <RouterView />
+      </DashboardContent>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-$sidebarWidth: 300px;
-
 .content {
-  width: calc(100% - $sidebarWidth) !important;
-  margin-left: $sidebarWidth !important;
+  width: calc(100% - 300px);
+  margin-left: 300px;
 }
 </style>
