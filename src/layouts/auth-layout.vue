@@ -1,11 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { TEXT_CONSTANTS } from "~/constants";
+</script>
 
 <template>
   <div class="h-screen w-screen bg-slate-100">
-    <div class="h-[60px] w-screen bg-black shadow"></div>
+    <div class="h-[60px] w-screen bg-slate-900 flex items-center shadow px-8">
+      <h1 class="text-md text-white font-bold uppercase">{{ TEXT_CONSTANTS.APP_TITLE }}</h1>
+    </div>
 
     <div class="h-full flex flex-col items-center gap-y-4 pt-[10%]">
-      <div class="w-1/4">
+      <div class="w-1/5 max-lg:w-4/5" style="zoom: 0.9">
         <RouterView />
 
         <div class="text-center mt-5">
