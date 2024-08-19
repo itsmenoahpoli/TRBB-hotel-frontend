@@ -1,21 +1,20 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { getCurrentTime } from "~/utils";
-import { TIME_CONSTANTS } from "~/constants";
 
 const currentTime = ref("");
 
 onMounted(() => {
   currentTime.value = getCurrentTime();
 
-  setTimeout(() => {
+  setInterval(() => {
     currentTime.value = getCurrentTime();
-  }, TIME_CONSTANTS.ONE_MINUTE);
+  }, 1000);
 });
 </script>
 
 <template>
-  <div class="h-[45px] w-full bg-[#002C42] text-xs text-white flex flex-row justify-between items-center px-10 !z-50">
+  <div class="h-[40px] w-full bg-[#002C42] text-xs text-white flex flex-row justify-between items-center px-10 !z-50">
     <div class="w-full">
       <p>{{ currentTime }}</p>
     </div>

@@ -49,6 +49,7 @@ const onFormSubmit = handleSubmit(async (formData: any) => {
 
     <div class="form-group">
       <FwbInput
+        type="password"
         v-model="fields.password.value"
         :ref="fields.password.ref"
         placeholder="Enter password"
