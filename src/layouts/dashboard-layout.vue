@@ -4,7 +4,7 @@ import { useAuth } from "~/composables";
 import DashboardHeader from "~/components/layouts/dashboard-header.vue";
 import DashboardSidebar from "~/components/layouts/dashboard-sidebar.vue";
 import DashboardContent from "~/components/layouts/dashboard-content.vue";
-import IdleChecker from "~/components/app/IdleChecker.vue";
+import IdleChecker from "~/components/app/app-idle-checker.vue";
 
 const { checkAuth } = useAuth();
 

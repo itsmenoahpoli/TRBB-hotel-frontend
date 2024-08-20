@@ -3,9 +3,11 @@ import { createPinia, Pinia } from "pinia";
 import pluginPersistedState from "pinia-plugin-persistedstate";
 import VueFeather from "vue-feather";
 import Notifications from "@kyvg/vue3-notification";
+
 import RootApp from "~/App.vue";
 import "~/styles/global.css";
-import "../node_modules/flowbite-vue/dist/index.css";
+import "@node_modules/flowbite-vue/dist/index.css";
+import "@node_modules/nprogress/nprogress.css";
 
 import router from "~/router";
 

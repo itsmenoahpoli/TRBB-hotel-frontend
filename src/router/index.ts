@@ -32,6 +32,12 @@ const router = createRouter({
           name: "dashboard-home",
           component: () => import("~/views/dashboard/home.vue"),
         },
+        {
+          path: "/dashboard/inventory/office-supplies",
+          name: "dashboard-home",
+          component: () =>
+            import("~/views/dashboard/inventory/manage-supplies-page.vue"),
+        },
       ],
     },
   ],
