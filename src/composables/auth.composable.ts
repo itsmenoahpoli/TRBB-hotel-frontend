@@ -1,7 +1,7 @@
 import { useAuthStore } from "~/store";
 
 export const useAuth = () => {
-  const { user, token } = useAuthStore();
+  const { user, token, CLEAR_AUTH } = useAuthStore();
 
   const isAuthenticated = user !== undefined && token !== undefined;
 
@@ -11,8 +11,15 @@ export const useAuth = () => {
     }
   };
 
+  const logout = () => {
+    CLEAR_AUTH();
+
+    window.location.replace("/auth/login");
+  };
+
   return {
     isAuthenticated,
     checkAuth,
+    logout,
   };
 };

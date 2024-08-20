@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { getCurrentTime } from "~/utils";
+import LogoutButton from "~/components/app/auth/logout-button.vue";
 
 const currentTime = ref("");
 
@@ -27,12 +28,8 @@ onMounted(() => {
         <VueFeather type="user" size="18" />
         My Account
       </button>
-      <button
-        class="flex items-center gap-x-1 hover:text-blue-300 cursor-pointer"
-      >
-        <VueFeather type="log-out" size="18" />
-        Log Out
-      </button>
+
+      <LogoutButton />
     </div>
   </div>
 </template>
