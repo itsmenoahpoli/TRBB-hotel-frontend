@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import RequestOtpForm from "~/components/domains/auth/request-otp-form.vue";
+import RequestOtpForm from "~/components/domains/app/request-otp-form.vue";
 </script>
 
 <template>
