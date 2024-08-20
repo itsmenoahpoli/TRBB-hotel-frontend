@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
+import { useAuth } from "~/composables";
 import DashboardHeader from "~/components/layouts/dashboard-header.vue";
 import DashboardSidebar from "~/components/layouts/dashboard-sidebar.vue";
 import DashboardContent from "~/components/layouts/dashboard-content.vue";
+
+const { checkAuth } = useAuth();
+
+onMounted(() => {
+  checkAuth();
+});
 </script>
 
 <template>
