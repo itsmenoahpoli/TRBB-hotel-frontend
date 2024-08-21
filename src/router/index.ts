@@ -1,6 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  type Router,
+  type RouteLocationNormalizedGeneric,
+  type RouteLocationNormalizedLoadedGeneric,
+  type NavigationGuardNext,
+} from "vue-router";
+import NProgress from "nprogress";
 
-const router = createRouter({
+const router: Router = createRouter({
   history: createWebHistory(),
   routes: [
     {
@@ -41,6 +49,23 @@ const router = createRouter({
       ],
     },
   ],
+});
+
+router.beforeEach(
+  (
+    to: RouteLocationNormalizedGeneric,
+    from: RouteLocationNormalizedLoadedGeneric,
+    next: NavigationGuardNext,
+  ) => {
+    console.log({ to, from, next });
+
+    NProgress.start();
+    next();
+  },
+);
+
+router.afterEach(() => {
+  NProgress.done();
 });
 
 export default router;
