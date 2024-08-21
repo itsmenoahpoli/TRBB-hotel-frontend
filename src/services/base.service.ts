@@ -10,7 +10,7 @@ export class BaseService {
   }
 
   protected createUrlWithParams(url: string, params: any) {
-    const queryParams = new URLSearchParams();
+    const queryParams: URLSearchParams = new URLSearchParams();
 
     for (const key in params) {
       if (params.hasOwnProperty(key)) {
