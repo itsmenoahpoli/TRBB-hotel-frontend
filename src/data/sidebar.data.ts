@@ -8,6 +8,7 @@ import {
   TbSettings,
   TbClipboard,
 } from "vue3-icons/tb";
+import { ROUTES } from "~/constants";
 
 export const sidebarData = [
   {
@@ -25,32 +26,32 @@ export const sidebarData = [
     children: [
       {
         label: "Office Supplies",
-        url: "/dashboard/inventory/office-supplies",
+        url: ROUTES.PAGE.DASHBOARD.INVENTORY.OFFICE_SUPPLIES,
         icon: TbListDetails,
       },
       {
         label: "Cleaning Supplies",
-        url: "/dashboard/inventory/cleaning-supplies",
+        url: ROUTES.PAGE.DASHBOARD.INVENTORY.CLEANING_SUPPLIES,
         icon: TbVacuumCleaner,
       },
       {
         label: "Guest Supplies",
-        url: "/dashboard/inventory/guest-supplies",
+        url: ROUTES.PAGE.DASHBOARD.INVENTORY.GUEST_SUPPLIES,
         icon: TbUsers,
       },
       {
         label: "Hotel Supplies",
-        url: "/dashboard/inventory/hotel-supplies",
+        url: ROUTES.PAGE.DASHBOARD.INVENTORY.HOTEL_SUPPLIES,
         icon: TbBuildingCommunity,
       },
       {
         label: "Food Supplies",
-        url: "/dashboard/inventory/food-supplies",
+        url: ROUTES.PAGE.DASHBOARD.INVENTORY.FOOD_SUPPLIES,
         icon: TbToolsKitchen2,
       },
       {
-        label: "Maintenance",
-        url: "/dashboard/inventory/maintenance",
+        label: "Maintenance Supplies",
+        url: ROUTES.PAGE.DASHBOARD.INVENTORY.MAINTENANCE_SUPPLIES,
         icon: TbSettings,
       },
     ],
@@ -60,7 +61,7 @@ export const sidebarData = [
     children: [
       {
         label: "Inventory Reports",
-        url: "/dashboard/reports/inventory",
+        url: ROUTES.PAGE.DASHBOARD.REPORTS.INVENTORY_REPORTS,
         icon: TbClipboard,
       },
     ],

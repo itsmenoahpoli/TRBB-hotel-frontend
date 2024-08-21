@@ -1,5 +1,6 @@
 import { createApp, App } from "vue";
 import { createPinia, Pinia } from "pinia";
+import { VueQueryPlugin } from "@tanstack/vue-query";
 import pluginPersistedState from "pinia-plugin-persistedstate";
 import VueFeather from "vue-feather";
 import Notifications from "@kyvg/vue3-notification";
@@ -20,6 +21,7 @@ const pinia: Pinia = createPinia().use(pluginPersistedState);
 app.use(pinia);
 app.use(router);
 app.use(Notifications);
+app.use(VueQueryPlugin);
 
 /**
  * Components

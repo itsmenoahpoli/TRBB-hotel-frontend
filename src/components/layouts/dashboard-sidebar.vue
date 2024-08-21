@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import { useRoute } from "vue-router";
 import { sidebarData } from "~/data";
 
 const isLinkActive = (url: string) => {
-  return url === window.location.pathname;
+  const route = useRoute();
+
+  return url === route.fullPath;
 };
 </script>
 

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { onMounted } from "vue";
+import { VueQueryDevtools } from "@tanstack/vue-query-devtools";
 
 onMounted(() => {
   console.log("App Mounted!");
@@ -7,7 +8,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <notifications />
+  <VueQueryDevtools />
+  <Notifications />
   <RouterView />
 </template>
 

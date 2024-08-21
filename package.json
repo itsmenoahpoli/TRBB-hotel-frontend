@@ -11,6 +11,7 @@
   "dependencies": {
     "@kyvg/vue3-notification": "^3.2.1",
     "@tanstack/vue-query": "^5.51.24",
+    "@tanstack/vue-query-devtools": "^5.52.0",
     "axios": "^1.7.2",
     "date-fns": "^3.6.0",
     "feather-icons": "^4.29.2",

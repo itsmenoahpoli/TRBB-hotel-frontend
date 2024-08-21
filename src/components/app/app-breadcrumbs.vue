@@ -1,15 +1,19 @@
 <script lang="ts" setup>
-import { computed } from "vue";
+const links = window.location.pathname.split("/");
+links.shift();
 
-const links = computed(() => {
-  return [];
-});
-
-console.log(links);
+const isLastItem = (idx: number) => idx === links.length - 1;
 </script>
 
 <template>
-  <div></div>
+  <div class="flex flex-row pl-3">
+    <p
+      v-for="(link, idx) in links"
+      class="text-xs text-gray-700 capitalize mr-2"
+    >
+      {{ link }} &nbsp; <span v-if="!isLastItem(idx)">/</span>
+    </p>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
