@@ -1,5 +1,8 @@
 export const ROUTES = {
   API: {
+    AUTH: {
+      LOGIN: "v1/auth/login",
+    },
     INVENTORY_SUPPLIES: "v1/admin/inventory/supplies",
   },
   PAGE: {

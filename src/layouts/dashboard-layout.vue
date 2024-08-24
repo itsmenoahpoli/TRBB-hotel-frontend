@@ -31,7 +31,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .content {
-  width: calc(100% - 300px);
-  margin-left: 300px;
+  width: calc(100% - 270px);
+  margin-left: 270px;
 }
 </style>

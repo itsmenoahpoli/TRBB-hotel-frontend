@@ -1,12 +1,12 @@
 import { BaseService } from "./../base.service";
 import { useAuthStore } from "~/store";
-import { HTTP_STATTUS_CODE } from "~/constants";
+import { HTTP_STATTUS_CODE, ROUTES } from "~/constants";
 import type { Credentials } from "~/types/auth";
 
 export class AuthService extends BaseService {
   public async authenticateCredentials(credentials: Credentials) {
     try {
-      const response = await this.http.post("/auth/login", credentials);
+      const response = await this.http.post(ROUTES.API.AUTH.LOGIN, credentials);
       const { SET_USER, SET_TOKEN } = useAuthStore();
       const { user, token } = response.data;
 

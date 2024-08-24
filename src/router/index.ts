@@ -16,6 +16,10 @@ const router: Router = createRouter({
       component: () => import("~/views/system/error.vue"),
     },
     {
+      path: "/",
+      redirect: "/auth/login",
+    },
+    {
       path: "/auth",
       component: () => import("~/layouts/auth-layout.vue"),
       children: [
@@ -43,26 +47,19 @@ const router: Router = createRouter({
         {
           path: "/dashboard/inventory/office-supplies",
           name: "dashboard-home",
-          component: () =>
-            import("~/views/dashboard/inventory/manage-supplies-page.vue"),
+          component: () => import("~/views/dashboard/inventory/manage-supplies-page.vue"),
         },
       ],
     },
   ],
 });
 
-router.beforeEach(
-  (
-    to: RouteLocationNormalizedGeneric,
-    from: RouteLocationNormalizedLoadedGeneric,
-    next: NavigationGuardNext,
-  ) => {
-    console.log({ to, from, next });
+router.beforeEach((to: RouteLocationNormalizedGeneric, from: RouteLocationNormalizedLoadedGeneric, next: NavigationGuardNext) => {
+  console.log({ to, from, next });
 
-    NProgress.start();
-    next();
-  },
-);
+  NProgress.start();
+  next();
+});
 
 router.afterEach(() => {
   NProgress.done();

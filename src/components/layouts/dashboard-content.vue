@@ -3,7 +3,7 @@ import AppBreadcrumbs from "~/components/app/app-breadcrumbs.vue";
 </script>
 
 <template>
-  <div class="h-screen w-full content">
+  <div class="h-screen w-full content pt-10">
     <div class="h-full w-full">
       <div class="py-3 mb-5">
         <AppBreadcrumbs />

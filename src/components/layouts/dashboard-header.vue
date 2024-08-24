@@ -15,16 +15,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="h-[40px] w-full bg-primary text-xs text-white flex flex-row justify-between items-center px-10 !z-50"
-  >
+  <div class="h-[40px] w-full bg-primary text-xs text-white flex flex-row justify-between items-center px-5 !z-50 fixed top-0">
     <div class="w-full">
-      <p>{{ currentTime }}</p>
+      <p class="text-white">Hotel Management System</p>
     </div>
     <div class="w-full flex justify-end items-center gap-x-5">
-      <button
-        class="flex items-center gap-x-1 hover:text-blue-300 cursor-pointer"
-      >
+      <p>{{ currentTime }}</p>
+      <button class="flex items-center gap-x-1 hover:text-orange-300 cursor-pointer">
         <VueFeather type="user" size="18" />
         My Account
       </button>

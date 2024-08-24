@@ -27,12 +27,7 @@ const isLinkActive = (url: string) => {
               'text-white font-medium bg-primary': isLinkActive(link.url),
             }"
           >
-            <component
-              v-if="link.icon"
-              :is="link.icon"
-              size="24"
-              color="orange"
-            />
+            <component v-if="link.icon" :is="link.icon" size="24" color="orange" />
             {{ link.label }}
           </RouterLink>
         </div>
@@ -43,7 +38,7 @@ const isLinkActive = (url: string) => {
 
 <style lang="scss" scoped>
 .sidebar {
-  width: 300px;
+  width: 270px;
   height: calc(100% - 40px);
   padding-top: 20px;
 }
